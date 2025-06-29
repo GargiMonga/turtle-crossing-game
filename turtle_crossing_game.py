@@ -58,7 +58,7 @@ while True:
                 play_sound('SystemHand')
                 if scoreboard.lives == 0:
                     g_on = False
-                    scoreboard.g_over()
+                    scoreboard.g_over(Car)
                 else:
                     player.go_to_start()
 
@@ -73,7 +73,8 @@ while True:
         scoreboard.update_timer(remaining)
         if remaining <= 0:
             g_on = False
-            scoreboard.g_over()
+            scoreboard.g_over(Car)
 
     screen.update()
+
 screen.exitonclick()
