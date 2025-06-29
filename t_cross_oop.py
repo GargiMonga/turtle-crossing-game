@@ -106,7 +106,9 @@ class ScoreBoard(Turtle):
         self.lives -= 1
         self.update_hud()
 
-    def g_over(self):
+    def g_over(self, car_manager):
+        for car in car_manager.all_cars:
+            car.goto(1000, 1000)  # Move cars far away
         self.goto(-60, 0)
         self.write(f'GAME OVER', align='left', font=font)
         self.goto(-120, -40)
